@@ -1,6 +1,7 @@
 package com.xxx.user.thirft;
 
 import com.xxx.thrift.user.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.server.TNonblockingServer;
@@ -18,6 +19,7 @@ import javax.annotation.PostConstruct;
  * @Description: Thrift 服务器配置
  * @Author: Jimmy
  */
+@Slf4j
 @Configuration
 public class ThriftService {
 
@@ -38,16 +40,19 @@ public class ThriftService {
         try {
             socket = new TNonblockingServerSocket(port);
         } catch (TTransportException e) {
-            TNonblockingServer.Args args = new TNonblockingServer.Args(socket);
-            args.processor(processor);
-            //传输 非阻塞
-            args.transportFactory(new TFastFramedTransport.Factory());
-            //通讯协议 二进制
-            args.protocolFactory(new TBinaryProtocol.Factory());
-            //服务器类型 多线程服务器端使用非阻塞式 I/O
-            TServer server = new TNonblockingServer(args);
-            server.serve();
+            log.error("Thrift异常",e);
         }
+
+        TNonblockingServer.Args args = new TNonblockingServer.Args(socket);
+        args.processor(processor);
+        //传输 非阻塞
+        args.transportFactory(new TFastFramedTransport.Factory());
+        //通讯协议 二进制
+        args.protocolFactory(new TBinaryProtocol.Factory());
+        //服务器类型 多线程服务器端使用非阻塞式 I/O
+        TServer server = new TNonblockingServer(args);
+        server.serve();
+        log.info("Thrift Success");
     }
 
 }
