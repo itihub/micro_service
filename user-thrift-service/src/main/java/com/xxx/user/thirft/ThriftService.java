@@ -1,10 +1,8 @@
 package com.xxx.user.thirft;
 
 import com.xxx.thrift.user.UserService;
-import org.apache.thrift.TException;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.protocol.TBinaryProtocol;
-import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.server.TNonblockingServer;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.transport.TFastFramedTransport;

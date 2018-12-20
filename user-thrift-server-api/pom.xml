@@ -12,14 +12,13 @@
     <groupId>com.xxx</groupId>
     <artifactId>user-thrift-server-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <description>user thrift java api</description>
+    <description> User Service (Java DEV) Thrift Java Api</description>
 
     <dependencies>
         <!-- thrift -->
         <dependency>
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
-            <version>0.11.0</version>
         </dependency>
     </dependencies>
 

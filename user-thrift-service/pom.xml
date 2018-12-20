@@ -12,6 +12,7 @@
     <groupId>com.xxx</groupId>
     <artifactId>user-thrift-service</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <description> User Service Java Dev </description>
 
     <dependencies>
         <!-- Spring boot -->
@@ -27,7 +28,7 @@
             <version>0.11.0</version>
         </dependency>
 
-        <!-- user thrift api -->
+        <!-- 用户服务 Java API -->
         <dependency>
             <groupId>com.xxx</groupId>
             <artifactId>user-thrift-server-api</artifactId>
@@ -48,7 +49,7 @@
             <version>5.1.44</version>
         </dependency>
 
-        <!-- 异构通知服务Java API -->
+        <!-- python信息服务 Java API -->
         <dependency>
             <groupId>com.xxx</groupId>
             <artifactId>messages-thrift-service-api-java</artifactId>
