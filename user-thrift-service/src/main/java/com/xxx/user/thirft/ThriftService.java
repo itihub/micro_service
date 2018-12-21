@@ -51,8 +51,8 @@ public class ThriftService {
         args.protocolFactory(new TBinaryProtocol.Factory());
         //服务器类型 多线程服务器端使用非阻塞式 I/O
         TServer server = new TNonblockingServer(args);
-        server.serve();
         log.info("Thrift Success");
+        server.serve();
     }
 
 }

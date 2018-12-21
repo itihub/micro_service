@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @Description: TODO
+ * @Description: 用户信息服务实现
  * @Author: Jimmy
  */
 @Service

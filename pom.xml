@@ -13,6 +13,7 @@
         <module>messages-thrift-service-api-java</module>
         <module>user-thrift-server-api</module>
         <module>user-thrift-service</module>
+        <module>user-edge-service</module>
     </modules>
 
     <dependencyManagement>

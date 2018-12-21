@@ -5,9 +5,15 @@
 <br> 
 <br>
 
+***IntelliJ IDEA 插件安装***
+- lombok
+- BashSupport
+- Thrift Support
+- Python
+
 **具有如下特点** 
 - 友好的代码结构及注释，便于阅读及二次开发
-- 。。。。
+- 多语言开发服务以及服务之间互相调用
 <br> 
 
 **项目结构** 
@@ -15,25 +21,30 @@
 micro_service
 ├─db  项目SQL语句
 │
-├─messages-thrift-python-service 有Python开发的信息服务，通讯使用thrift
+├─messages-thrift-python-service 信息服务(Python开发，通讯使用Thrift)
 │  └─messages 
 │    └─api 
 │  └─thrift
 │
+│─messages-thrift-service-api-java 信息服务JavaRPC接口
 │
-├─config 配置信息
+├─user-edge-server 用户服务模块(Rest API)
+│  ├─
+│  ├─
+│  └─
+│
 │ 
-├─modules 功能模块
-│  ├─app API接口模块(APP调用)
-│  ├─job 定时任务模块
-│  ├─oss 文件服务模块
-│  └─sys 权限模块
+├─user-thrift-service 用户服务模块(Java开发，通讯协议Thrift)
+│  ├─mapper 持久层
+│  ├─service 业务逻辑层
+│  └─thrift thrift服务启动配置
+│
+│
+├─user-thritf-service-api 用户服务JavaRPC接口
 │ 
-├─RenrenApplication 项目启动类
 │  
-├──resources 
-│  ├─mapper SQL对应的XML文件
-│  └─static 静态资源
+├──pom.xml 
+│  
 
 ```
 <br> 

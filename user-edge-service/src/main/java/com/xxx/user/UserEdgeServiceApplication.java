@@ -4,13 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @Description: 项目启动类
+ * @Description: TODO
  * @Author: Jimmy
  */
 @SpringBootApplication
-public class UserServiceApplication {
+public class UserEdgeServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserServiceApplication.class, args);
+        SpringApplication.run(UserEdgeServiceApplication.class, args);
     }
 }
