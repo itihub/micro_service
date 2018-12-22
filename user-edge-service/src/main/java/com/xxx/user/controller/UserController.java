@@ -57,7 +57,7 @@ public class UserController {
         String token = UUID.randomUUID().toString().replaceAll("-", "");
         //3缓存用户
         String key = String.format(KetPrefixConstants.KEY_ACCESS_TOKEN, userInfo.getId());
-        redisTemplate.opsForHash().hasKey(key, null);
+        redisTemplate.opsForHash().hasKey(key, userInfo);
 
         return new DataResponse(token);
     }
