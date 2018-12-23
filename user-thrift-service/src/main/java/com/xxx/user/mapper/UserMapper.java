@@ -35,7 +35,7 @@ public interface UserMapper {
      */
     @Insert("INSERT INTO pe_user (username, password, real_name, mobile, email) VALUES " +
             "(#{userInfo.username}, #{userInfo.password}, #{userInfo.realName}, #{userInfo.mobile}, #{userInfo.email})")
-    void insertUser(UserInfo userInfo);
+    void insertUser(@Param("userInfo") UserInfo userInfo);
 
     /**
      * 根据用户编号获取用户课程信息

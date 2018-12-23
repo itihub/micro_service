@@ -1,5 +1,6 @@
 package com.xxx.user.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.xxx.user.enums.ResponseEnum;
 import lombok.Data;
 
@@ -10,6 +11,7 @@ import java.io.Serializable;
  * @Author: Jimmy
  */
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Response implements Serializable {
 
     private Integer code;

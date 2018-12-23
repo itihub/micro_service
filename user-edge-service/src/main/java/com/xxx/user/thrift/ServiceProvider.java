@@ -1,7 +1,9 @@
 package com.xxx.user.thrift;
 
+import com.xxx.thrift.messages.MessagesService;
 import com.xxx.thrift.user.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.thrift.TServiceClient;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.TFastFramedTransport;
@@ -31,11 +33,39 @@ public class ServiceProvider {
     @Value("${thrift.user.service.timeout}")
     private Integer timeout = 3000;
 
+    /**服务ip*/
+    @Value("${thrift.messages.service.ip}")
+    private String messagesServiceIp;
+
+    /**服务端口*/
+    @Value("${thrift.messages.service.port}")
+    private Integer messagesServicePort;
+
+    /**服务超时时间*/
+    @Value("${thrift.messages.service.timeout}")
+    private Integer messagesTimeout = 3000;
+
+    private enum ServiceType{
+        USER,
+        MESSAGE,
+    }
+
     /**
      * 获取UserServiceThrift服务客户端
      * @return
      */
     public UserService.Client getUserService(){
+
+        return getService(serviceIp, servicePort, timeout, ServiceType.USER);
+    }
+
+    public MessagesService.Client getMessageService(){
+
+        return getService(messagesServiceIp, messagesServicePort, messagesTimeout, ServiceType.MESSAGE);
+    }
+
+    private <T> T getService(String ip, Integer port, Integer timeout, ServiceType type){
+
 
         TSocket socket = new TSocket(serviceIp, servicePort, timeout);
         TTransport tTransport = new TFastFramedTransport(socket);
@@ -46,8 +76,15 @@ public class ServiceProvider {
             return null;
         }
         TProtocol protocol = new TBinaryProtocol(tTransport);
-        UserService.Client client = new UserService.Client(protocol);
-
-        return client;
+        TServiceClient client = null;
+        switch (type){
+            case USER:
+                client = new UserService.Client(protocol);
+                break;
+            case MESSAGE:
+                client = new MessagesService.Client(protocol);
+                break;
+        }
+        return (T) client;
     }
 }

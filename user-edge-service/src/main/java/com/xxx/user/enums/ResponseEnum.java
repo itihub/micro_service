@@ -8,8 +8,12 @@ import lombok.Getter;
  */
 @Getter
 public enum ResponseEnum {
-
+    SERVER_ERROR(9999, "server error"),
+    PARAM_ERROR(1111, "param check failed"),
     USERNAME_PASSWORD_INVALID(1001, "username or password invalid"),
+    NO_MOBILE_OR_EMAIL_REQUIRED(1002, "mobile or email is required"),
+    SEND_VERIFY_CODE_FAILED(1003, "send verify code failed"),
+    VERIFY_CODE_INVALID(1004, "verifyCode invalid"),
     ;
 
     private Integer code;

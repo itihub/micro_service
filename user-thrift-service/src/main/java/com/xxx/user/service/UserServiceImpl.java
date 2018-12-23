@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @Author: Jimmy
  */
 @Service
-public class UserInfoImpl implements UserService.Iface {
+public class UserServiceImpl implements UserService.Iface {
 
     @Autowired
     private UserMapper userMapper;

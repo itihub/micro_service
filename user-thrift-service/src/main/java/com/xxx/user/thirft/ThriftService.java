@@ -23,7 +23,7 @@ import javax.annotation.PostConstruct;
 @Configuration
 public class ThriftService {
 
-    @Value("${service.port}")
+    @Value("${server.port}")
     private Integer port;
 
     @Autowired

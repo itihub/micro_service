@@ -32,7 +32,7 @@ public class UserMapperTest extends UserServiceApplicationTest {
         UserInfo userInfo = new UserInfo();
         userInfo.setUsername("当妮");
         userInfo.setPassword("abcd");
-        userInfo.setRealName(null);
+        userInfo.setRealName("");
         userInfo.setEmail("dangni@example.com");
         userInfo.setMobile("15551235555");
         userMapper.insertUser(userInfo);

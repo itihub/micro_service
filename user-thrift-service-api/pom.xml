@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xxx</groupId>
-    <artifactId>user-thrift-server-api</artifactId>
+    <artifactId>user-thrift-service-api</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description> User Service (Java DEV) Thrift Java Api</description>
 
@@ -19,6 +19,11 @@
         <dependency>
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

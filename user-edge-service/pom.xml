@@ -40,7 +40,7 @@
         <!-- 用户服务 Java API -->
         <dependency>
             <groupId>com.xxx</groupId>
-            <artifactId>user-thrift-server-api</artifactId>
+            <artifactId>user-thrift-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
@@ -49,6 +49,17 @@
             <groupId>com.xxx</groupId>
             <artifactId>messages-thrift-service-api-java</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <!-- lombok -->
