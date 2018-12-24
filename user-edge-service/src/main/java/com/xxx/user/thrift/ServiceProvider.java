@@ -67,7 +67,7 @@ public class ServiceProvider {
     private <T> T getService(String ip, Integer port, Integer timeout, ServiceType type){
 
 
-        TSocket socket = new TSocket(serviceIp, servicePort, timeout);
+        TSocket socket = new TSocket(ip, port, timeout);
         TTransport tTransport = new TFastFramedTransport(socket);
         try {
             tTransport.open();

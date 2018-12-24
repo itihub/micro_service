@@ -97,7 +97,7 @@ public class UserController {
             return new Response(ResponseEnum.SERVER_ERROR);
         }
 
-        return new Response(ResponseEnum.VERIFY_CODE_INVALID);
+        return new DataResponse();
     }
 
     @ResponseBody
