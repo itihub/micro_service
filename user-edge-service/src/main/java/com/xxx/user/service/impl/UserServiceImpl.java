@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
         //2生成token
         String token = UUID.randomUUID().toString().replaceAll("-", "");
         //3缓存用户
-        String key = String.format(KetPrefixConstants.KEY_ACCESS_TOKEN, userInfo.getId());
+        String key = String.format(KetPrefixConstants.KEY_ACCESS_TOKEN, token);
         redisClient.set(key, toDTO(userInfo), 3600);
         return token;
     }

@@ -1,6 +1,5 @@
 package com.xxx.user.client;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.xxx.thrift.user.domain.dto.UserDTO;
@@ -10,6 +9,7 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.servlet.*;
 import javax.servlet.http.Cookie;
