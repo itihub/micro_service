@@ -71,6 +71,7 @@
     </dependencies>
 
     <build>
+        <finalName>${artifactId}-${version}-${env}</finalName>
         <plugins>
 
             <plugin>
@@ -87,13 +88,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
             </plugin>
 
         </plugins>
@@ -101,14 +98,36 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
+                <filtering>true</filtering> <!--决定properties是否可以读取pom标签-->
                 <excludes>
                     <exclude>db/*</exclude>
-                    <exclude>application.properties</exclude>
+                    <!--<exclude>application-${env}.properties</exclude>-->
                 </excludes>
             </resource>
 
         </resources>
 
-
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <env>prod</env>
+            </properties>
+            <!--<activation>-->
+                <!--<activeByDefault>true</activeByDefault>-->
+            <!--</activation>-->
+        </profile>
+    </profiles>
 </project>
