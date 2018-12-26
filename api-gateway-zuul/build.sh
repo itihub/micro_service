@@ -4,4 +4,4 @@ mvn clean package -Dmaven.test.skip=true
 
 cp ./src/main/resources/application-prod.properties ./target/application-prod.properties
 
-docker build -t user-service:latest .
+docker build -t api-gateway-zuul:latest .

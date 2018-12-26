@@ -3,6 +3,6 @@ FROM openjdk:8-jre
 # 声明维护者
 MAINTAINER jizhe@live.cn
 
-COPY ./target/user-thrift-service-1.0-SNAPSHOT.jar /user-service.jar
+COPY ./target/user-thrift-service-1.0-SNAPSHOT-prod.jar /user-service.jar
 
-ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-dev.properties", "/user-service.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-prod.properties", "/user-service.jar"]
