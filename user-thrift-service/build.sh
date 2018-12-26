@@ -2,4 +2,6 @@
 
 mvn clean package -Dmaven.test.skip=true
 
-docker build -t user-service:latest
+cp ./src/main/resources/application-dev.properties ./target/application-dev.properties
+
+docker build -t user-service:latest .

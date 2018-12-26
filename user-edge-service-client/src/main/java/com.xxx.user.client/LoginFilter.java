@@ -73,7 +73,8 @@ public abstract class LoginFilter implements Filter {
         }
 
         if (userDTO == null){
-            response.sendRedirect("http://localhost:8080/user/login");
+            String loginUrl = String.format("http://%s/user/login", userEdgeServiceAddr());
+            response.sendRedirect(loginUrl);
             return;
         }
 

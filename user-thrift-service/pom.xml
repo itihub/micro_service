@@ -99,12 +99,12 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering> <!--决定properties是否可以读取pom标签-->
+                <!--排除文件-->
                 <excludes>
                     <exclude>db/*</exclude>
-                    <!--<exclude>application-${env}.properties</exclude>-->
+                    <exclude>application-*.properties</exclude>
                 </excludes>
             </resource>
-
         </resources>
 
     </build>
