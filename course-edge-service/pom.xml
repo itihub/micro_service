@@ -27,48 +27,43 @@
         </dependency>
 
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.xxx</groupId>
             <artifactId>course-dubbo-service-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- dubbo -->
         <dependency>
-            <groupId>com.alibaba.spring.boot</groupId>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>2.0.0</version>
+            <version>2.7.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.xxx</groupId>
             <artifactId>user-edge-service-client</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
 
-        <finalName>${artifactId}-${version}-${env}</finalName>
+        <finalName>${artifactId}-${version}</finalName>
 
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -95,28 +90,6 @@
         </resources>
 
     </build>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <env>dev</env>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-
-        <profile>
-            <id>prod</id>
-            <properties>
-                <env>prod</env>
-            </properties>
-            <!--<activation>-->
-            <!--<activeByDefault>true</activeByDefault>-->
-            <!--</activation>-->
-        </profile>
-    </profiles>
 
 
 </project>

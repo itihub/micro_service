@@ -4,7 +4,7 @@ FROM openjdk:8-jre
 MAINTAINER jizhe jizhe@live.cn
 
 WORKDIR /app
-COPY ./target/user-thrift-service-1.0-SNAPSHOT-prod.jar /app/user-service.jar
-COPY ./target/application-prod.properties /app/application-prod.properties
+COPY ./target/user-thrift-service-1.0-SNAPSHOT.jar /app/user-service.jar
+COPY ./target/application-dev.properties /app/application-dev.properties
 
-ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-prod.properties", "/user-service.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-dev.properties", "/user-service.jar"]
