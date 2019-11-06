@@ -1,17 +1,7 @@
-target/
-logs/
-sql/
-!.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.mvnw
-.mvnw.cmd
+*.class
+
+
 
 ### IntelliJ IDEA ###
 .idea
@@ -19,13 +9,8 @@ sql/
 *.iml
 *.ipr
 
-### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+### git ###
+*.orig
 
 ### Mac ###
 **/.DS_Store

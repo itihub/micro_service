@@ -4,6 +4,7 @@ import com.xxx.course.domain.dto.CourseDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * @Description: TODO
  * @Author: JiZhe
  */
-@Mapper
+@Repository
 public interface CourseMapper {
 
     @Select("SELECT * FROM pe_course")

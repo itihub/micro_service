@@ -20,7 +20,7 @@ import javax.annotation.PostConstruct;
  * @Author: Jimmy
  */
 @Slf4j
-//@Configuration
+@Configuration
 public class ThriftService {
 
     @Value("${server.port}")

@@ -1,5 +1,5 @@
 FROM python-base:latest
-MAINTAINER jizhe@live.cn
+MAINTAINER jizhe jizhe@live.cn
 
 #设置环境变量
 ENV PYTHONPATH /
