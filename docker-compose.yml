@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  messages-service:
+    image: message-service:latest
+
+  user-thrift-service:
+    image: user-thrift-service:latest
+
+  user-edge-service:
+    image: user-edge-service:latest
+    links:
+      - user-service
+      - messages-service
+
+  course-dubbo-service:
+    image: course-dubbo-service:latest
+    links:
+      - user-service
+
+  course-edge-service:
+    image: courser-edge-service:latest
+    links:
+      - user-edge-service
+
+  api-geteway-zuil:
+    image: api-geteway-zuul:latest
+    links:
+      - user-edge-service
+      - course-edge-service
+    ports:
+      - 8080:8080

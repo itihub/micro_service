@@ -2,6 +2,8 @@ package com.xxx.user.thrift;
 
 import com.xxx.thrift.messages.MessagesService;
 import com.xxx.thrift.user.UserService;
+import lombok.Data;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.thrift.TServiceClient;
 import org.apache.thrift.protocol.TBinaryProtocol;
@@ -45,6 +47,7 @@ public class ServiceProvider {
     @Value("${thrift.messages.service.timeout}")
     private Integer messagesTimeout = 3000;
 
+
     private enum ServiceType{
         USER,
         MESSAGE,
@@ -65,7 +68,6 @@ public class ServiceProvider {
     }
 
     private <T> T getService(String ip, Integer port, Integer timeout, ServiceType type){
-
 
         TSocket socket = new TSocket(ip, port, timeout);
         TTransport tTransport = new TFastFramedTransport(socket);

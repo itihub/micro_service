@@ -1,6 +1,6 @@
 
 -- 创建数据库
-CREATE DATABASE db_user;
+-- CREATE DATABASE db_user;
 
 -- 用户表
 CREATE TABLE `pe_user` (

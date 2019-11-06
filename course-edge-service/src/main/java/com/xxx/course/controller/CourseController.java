@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/course")
 public class CourseController {
 
-    @Reference
+    @Reference(url = "dubbo://127.0.0.1:20880")
     private ICourseService courseService;
 
     @GetMapping("/courseList")

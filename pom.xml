@@ -21,33 +21,104 @@
         <module>user-edge-service-client</module>
     </modules>
 
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+        <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
+        <guava.version>28.0-jre</guava.version>
+        <lombok.version>1.16.20</lombok.version>
+        <flyway.version>6.0.1</flyway.version>
+        <user.server.api>1.0-SNAPSHOT</user.server.api>
+        <messages.server.api>1.0-SNAPSHOT</messages.server.api>
+        <thrift.version>0.11.0</thrift.version>
+        <course.dubbo.service.api>1.0-SNAPSHOT</course.dubbo.service.api>
+        <user.edge.service.client>1.0-SNAPSHOT</user.edge.service.client>
+        <commons.lang3.version>3.4</commons.lang3.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
+            <!-- spring cloud -->
+            <!--  Spring Cloud 对应Spring boot 版本查看网址 https://start.spring.io/actuator/info  -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--  google.guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- flyway -->
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+
             <!-- thrift -->
             <dependency>
                 <groupId>org.apache.thrift</groupId>
                 <artifactId>libthrift</artifactId>
-                <version>0.11.0</version>
+                <version>${thrift.version}</version>
+            </dependency>
+
+            <!-- commons lang  -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
             </dependency>
 
             <!-- python信息服务 Java API -->
             <dependency>
                 <groupId>com.xxx</groupId>
                 <artifactId>messages-thrift-service-api-java</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${messages.server.api}</version>
             </dependency>
 
             <!-- 用户服务 Java API -->
             <dependency>
                 <groupId>com.xxx</groupId>
-                <artifactId>user-thrift-server-api</artifactId>
+                <artifactId>user-thrift-service-api</artifactId>
+                <version>${user.server.api}</version>
+            </dependency>
+
+            <!-- 课程服务 Java RPC -->
+          <dependency>
+                <groupId>com.xxx</groupId>
+                <artifactId>course-dubbo-service-api</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.16.22</version>
+                <groupId>com.xxx</groupId>
+                <artifactId>user-edge-service-client</artifactId>
+                <version>${user.edge.service.client}</version>
             </dependency>
 
         </dependencies>
@@ -65,18 +136,19 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
+
+
     </build>
+
+    <!-- Maven镜像设置   -->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
 
 </project>
