@@ -2,7 +2,6 @@ package com.xxx.user.mapper;
 
 import com.xxx.thrift.user.UserInfo;
 import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
