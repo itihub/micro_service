@@ -9,6 +9,7 @@ import org.apache.thrift.server.TServer;
 import org.apache.thrift.transport.TFastFramedTransport;
 import org.apache.thrift.transport.TNonblockingServerSocket;
 import org.apache.thrift.transport.TTransportException;
+import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -29,12 +30,17 @@ public class ThriftService {
     @Autowired
     private UserService.Iface userService;
 
+    @Autowired
+    private Flyway flyway;
+
     /**
      * @PostConstruct  加载Servlet时运行 只会调用一次
      * @PreDestroy      卸载Servlet时运行 只会调用一次
      */
     @PostConstruct
     public void startThriftService(){
+        //启动thrift之前执行flyway脚本
+        flyway.migrate();
         TProcessor processor = new UserService.Processor<>(userService);
         TNonblockingServerSocket socket = null;
         try {
