@@ -4,6 +4,5 @@ FROM openjdk:8-jre
 MAINTAINER jizhe@live.cn
 
 COPY ./target/course-edge-service-1.0-SNAPSHOT-prod.jar /course-edge-service.jar
-COPY ./target/application-prod.properties /application-prod.properties
 
-ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-prod.properties", "/course-edge-service.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=dev", "/course-edge-service.jar"]
