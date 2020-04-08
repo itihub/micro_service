@@ -1,4 +1,5 @@
 FROM python:3.6
 MAINTAINER jizhe@live.cn
 
+# 构建带有thrift模块的Pyhton基础镜像
 RUN pip install thrift
