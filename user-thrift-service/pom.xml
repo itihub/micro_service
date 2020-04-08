@@ -82,21 +82,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- flyway -->
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
-
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

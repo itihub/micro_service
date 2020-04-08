@@ -168,4 +168,54 @@
         </repository>
     </repositories>
 
+    <profiles>
+        <profile>
+            <id>userdb</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-maven-plugin</artifactId>
+                        <version>5.2.4</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>mysql</groupId>
+                                <artifactId>mysql-connector-java</artifactId>
+                                <version>5.1.41</version>
+                            </dependency>
+                        </dependencies>
+                        <configuration>
+                            <configFile>scripts/db/migration/flyway-userdb.properties</configFile>
+                        </configuration>
+                        <inherited>false</inherited>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>coursedb</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-maven-plugin</artifactId>
+                        <version>5.2.4</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>mysql</groupId>
+                                <artifactId>mysql-connector-java</artifactId>
+                                <version>5.1.41</version>
+                            </dependency>
+                        </dependencies>
+                        <configuration>
+                            <configFile>scripts/db/migration/flyway-coursedb.properties</configFile>
+                        </configuration>
+                        <inherited>false</inherited>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>

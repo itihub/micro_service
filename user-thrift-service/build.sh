@@ -9,4 +9,4 @@ mvn clean package -Dmaven.test.skip=true
 cp ./src/main/resources/application-prod.properties ./target/application-prod.properties
 
 #3. 构建Docker镜像
-docker build -t user-thrift-service:latest .
+docker build -t user-service:latest .
