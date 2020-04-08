@@ -3,7 +3,8 @@ FROM openjdk:8-jre
 # 声明维护者
 MAINTAINER jizhe@live.cn
 
-COPY ./target/user-edge-service-1.0-SNAPSHOT-prod.jar /user-edge-service.jar
-COPY ./target/application-prod.properties /application-prod.properties
+WORKDIR /app
+COPY ./target/user-edge-service-1.0-SNAPSHOT.jar /app/user-edge-service.jar
+COPY ./target/application-prod.properties /app/application-prod.properties
 
-ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-prod.properties", "/user-edge-service.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-prod.properties", "/app/user-edge-service.jar"]
