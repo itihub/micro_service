@@ -5,6 +5,6 @@ MAINTAINER jizhe jizhe@live.cn
 
 WORKDIR /app
 COPY ./target/user-thrift-service-1.0-SNAPSHOT.jar /app/user-service.jar
-COPY ./target/application-dev.properties /app/application-dev.properties
+COPY ./target/application-prod.properties /app/application-prod.properties
 
-ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-dev.properties", "/user-service.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-prod.properties", "/app/user-service.jar"]
