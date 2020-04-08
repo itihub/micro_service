@@ -5,5 +5,6 @@ MAINTAINER jizhe@live.cn
 
 WORKDIR /app
 COPY ./target/course-dubbo-service-1.0-SNAPSHOT.jar /app/course-dubbo-service.jar
+COPY ./target/application-prod.properties /app/application-prod.properties
 
-ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=dev", "/course-dubbo-service.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.config.location=application-prod.properties", "/app/course-dubbo-service.jar"]
