@@ -37,8 +37,8 @@ if __name__ == '__main__':
     handler = MessagesServiceHandler()
     processor = MessagesService.Processor(handler)
     # 若容器内无法连接请将地址绑定为None
-    # transport = TSocket.TServerSocket(None, "9090")
-    transport = TSocket.TServerSocket("127.0.0.1", "9090")
+    transport = TSocket.TServerSocket(None, "9090")
+    # transport = TSocket.TServerSocket("127.0.0.1", "9090")
     tfactory = TTransport.TFramedTransportFactory()
     pfactory = TBinaryProtocol.TBinaryProtocolFactory()
 
