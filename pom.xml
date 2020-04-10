@@ -121,6 +121,12 @@
                 <version>${user.edge.service.client}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>0.11</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

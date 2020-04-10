@@ -19,7 +19,8 @@ import java.util.List;
 @RequestMapping("/course")
 public class CourseController {
 
-    @Reference(url = "dubbo://127.0.0.1:20880")
+//    @Reference(url = "dubbo://192.168.100.165:20880")
+    @Reference(interfaceClass = ICourseService.class)
     private ICourseService courseService;
 
     @GetMapping("/courseList")
